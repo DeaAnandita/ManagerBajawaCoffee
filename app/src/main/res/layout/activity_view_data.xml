@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewDataActivity">
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spPilih"
+        style="@style/MyDarkToolbarStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:spinnerMode="dropdown"
+        android:background="@drawable/bg_spinner"/>
+
+    <TextView
+        android:id="@+id/tvn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spPilih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:text="No. "
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"/>
+    <TextView
+        android:id="@+id/tva"
+        app:layout_constraintTop_toBottomOf="@+id/spPilih"
+        app:layout_constraintLeft_toRightOf="@+id/tvn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="3dp"
+        android:text="Atas Nama"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"/>
+    <TextView
+        android:id="@+id/tvp"
+        app:layout_constraintTop_toBottomOf="@+id/spPilih"
+        app:layout_constraintLeft_toRightOf="@+id/tva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="40dp"
+        android:text="Tanggal Pembelian"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"/>
+    <TextView
+        android:id="@+id/tvt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spPilih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Total"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+    <View
+        android:id="@+id/view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvn"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/line"/>
+
+    <LinearLayout
+        android:id="@+id/lnre"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="10dp">
+
+    </LinearLayout>
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            //tools:listitem="@layout/rv_number"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+<!--    </LinearLayout>-->
+
+    <View
+        android:id="@+id/view1"
+        app:layout_constraintTop_toBottomOf="@+id/lnre"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBlack"/>
+
+    <TextView
+        android:id="@+id/tvm"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Total Masukan ("
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvTanggal"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintLeft_toRightOf="@id/tvm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mingguan"
+        android:textStyle="bold"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintLeft_toRightOf="@+id/tvTanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=") : "
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/strip"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=" ,-"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/tvNominal"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintRight_toLeftOf="@+id/strip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="180.000"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintRight_toLeftOf="@+id/tvNominal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Rp. "
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@id/tvm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_download"
+        android:layout_marginHorizontal="20dp"
+        android:hint="DOWNLOAD"
+        android:textColorHint="@color/colorWhite"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

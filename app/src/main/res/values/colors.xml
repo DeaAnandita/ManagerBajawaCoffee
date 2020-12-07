@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#CAB69B</color>
+    <color name="colorPrimaryDark">#7E6B5C</color>
+    <color name="colorAccent">#ceb1a3</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorGrey">#303030</color>
+    <color name="profile_default_tint">#e0e0e0</color>
+</resources>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        tools:context=".AddDataActivity">
+
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:background="@mipmap/login_bg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+        </ImageView>
+
+
+        <ImageView
+            android:id="@+id/ivAddImage"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/add_image" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Product" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/etJenis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jenis Product" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+
+            <EditText
+                android:id="@+id/etHarga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Harga" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnTambah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/btnlogin"
+            android:text="Tambahkan"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        android:text="Input Data Bajawa Coffee"-->
+<!--        android:fontFamily="cursive"-->
+<!--        android:textSize="23dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:textColor="@color/colorWhite"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="and Gallery"-->
+<!--        android:fontFamily="cursive"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:textSize="20dp"-->
+<!--        android:layout_marginBottom="70dp"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:textColor="@color/colorWhite"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/bg"-->
+<!--        />-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/bg"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cardUseCompatPadding="true"-->
+<!--            app:cardCornerRadius="8dp"-->
+<!--            android:layout_marginHorizontal="10dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:padding="10dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:layout_width="95dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <de.hdodenhof.circleimageview.CircleImageView-->
+
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                        app:layout_constraintRight_toRightOf="parent"-->
+<!--                        android:id="@+id/ivImage"-->
+<!--                        android:layout_width="96dp"-->
+<!--                        android:layout_height="96dp"-->
+<!--                        android:src="@mipmap/home_bg"-->
+<!--                        app:civ_border_width="2dp"-->
+<!--                        app:civ_border_color="@color/colorWhite"-->
+<!--                        android:layout_alignParentTop="true"-->
+<!--                        android:layout_alignParentLeft="true" />-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/btnImage"-->
+<!--                        android:layout_width="35dp"-->
+<!--                        android:layout_height="35dp"-->
+<!--                        android:layout_marginLeft="32dp"-->
+<!--                        android:layout_marginBottom="56dp"-->
+<!--                        android:background="@drawable/btn_image"-->
+<!--                        android:drawableBottom="@drawable/ic_baseline_add_a_photo_24"-->
+<!--                        android:paddingBottom="6dp"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.733"-->
+<!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                        app:layout_constraintRight_toRightOf="parent" />-->
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_marginLeft="15dp">-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+<!--                        <EditText-->
+<!--                            android:id="@+id/etNama"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="Nama"-->
+<!--                            android:textSize="10sp"-->
+<!--                            android:textColorHint="@color/colorPrimary"-->
+<!--                            android:textColor="@color/colorBlack"/>-->
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+<!--                        <EditText-->
+<!--                            android:id="@+id/etHarga"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="Harga"-->
+<!--                            android:textSize="10sp"-->
+<!--                            android:textColorHint="@color/colorPrimary"-->
+<!--                            android:textColor="@color/colorBlack"/>-->
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+<!--                        <EditText-->
+<!--                            android:id="@+id/etJenis"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="Jenis"-->
+<!--                            android:textSize="10sp"-->
+<!--                            android:textColorHint="@color/colorPrimary"-->
+<!--                            android:textColor="@color/colorBlack"/>-->
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+<!--                    <Button-->
+<!--                        android:id="@+id/btnTambah"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:background="@drawable/btn_tambah"-->
+<!--                        android:text="Tambah"-->
+<!--                        android:layout_marginVertical="10dp"-->
+<!--                        android:textColor="@color/colorWhite"-->
+<!--                        android:layout_marginLeft="1dp"/>-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
