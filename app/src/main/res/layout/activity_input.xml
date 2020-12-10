@@ -32,6 +32,26 @@
             android:layout_gravity="center"
             android:src="@mipmap/add_image" />
 
+        <TextView
+            android:id="@+id/tvLinkFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/etKode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kode Product" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

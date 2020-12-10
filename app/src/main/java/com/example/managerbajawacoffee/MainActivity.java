@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
                                 try {
                                     JSONObject PAYLOAD = response.getJSONObject("PAYLOAD");
                                     boolean sukses = PAYLOAD.getBoolean("respon");
-                                    String roleuser = PAYLOAD.getString("roleuser");
-                                    Log.d("PAYLOAD", "onResponse: " + PAYLOAD);
+                                    Log.d("TAG", "onResponse: " + sukses);
                                     if (sukses) {
                                         sp.edit().putString("logged","user").apply();
                                         Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
