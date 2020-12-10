@@ -94,6 +94,13 @@ public class InputActivity extends AppCompatActivity implements IPickResult {
                             @Override
                             public void onResponse(JSONObject response) {
                                 Toast.makeText(InputActivity.this, "masuk", Toast.LENGTH_SHORT).show();
+                                String message = response.optString("message");
+                                String status = response.optString("status");
+                                String url = response.optString("url");
+                                Log.d("TEST", "url: " + url);
+                                Toast.makeText(InputActivity.this, url + message, Toast.LENGTH_LONG).show();
+                                tvLinkFoto.setText("http://" + url);
+                                Glide.with(InputActivity.this).load("http://" + url).into(ivimage);
                             }
 
                             @Override

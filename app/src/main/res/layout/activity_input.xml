@@ -33,6 +33,7 @@
             android:src="@mipmap/add_image" />
 
         <TextView
+            android:visibility="invisible"
             android:id="@+id/tvLinkFoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
