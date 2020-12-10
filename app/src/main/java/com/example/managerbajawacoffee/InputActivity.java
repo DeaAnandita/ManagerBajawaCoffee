@@ -44,7 +44,6 @@ public class InputActivity extends AppCompatActivity implements IPickResult {
     TextView tvLinkFoto;
 
     private ProgressDialog progressBar;
-
     private Bitmap selectedImage;
     private String selectedImagePathfoto = "";
 
@@ -61,7 +60,6 @@ public class InputActivity extends AppCompatActivity implements IPickResult {
         etjenis = findViewById(R.id.etJenis);
         btnTambah = findViewById(R.id.btnTambah);
         ivimage = findViewById(R.id.ivAddImage);
-        tvLinkFoto = findViewById(R.id.tvLinkFoto);
         fileselectedImagePath = new File(selectedImagePathfoto);
 
         progressBar = new ProgressDialog(this);
@@ -77,13 +75,13 @@ public class InputActivity extends AppCompatActivity implements IPickResult {
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                                             String kode = etnama.getText().toString();
-//                                             String nama = etnama.getText().toString();
-//                                             String jenis = etharga.getText().toString();
-//                                             String harga = etjenis.getText().toString();
-//
-//                                             progressBar.setTitle("Menambahkan...");
-//                                             progressBar.show();
+                                             String kode = etnama.getText().toString();
+                                             String nama = etnama.getText().toString();
+                                             String jenis = etharga.getText().toString();
+                                             String harga = etjenis.getText().toString();
+
+                                             progressBar.setTitle("Menambahkan...");
+                                             progressBar.show();
 
                 AndroidNetworking.upload("http://192.168.6.159/apibajawa/insertimage.php")
                         .addMultipartFile("gambar", fileselectedImagePath)
@@ -98,13 +96,15 @@ public class InputActivity extends AppCompatActivity implements IPickResult {
                                 String status = response.optString("status");
                                 String url = response.optString("url");
                                 Log.d("TEST", "url: " + url);
-                                Toast.makeText(InputActivity.this, url + message, Toast.LENGTH_LONG).show();
-                                tvLinkFoto.setText("http://" + url);
+                                //Toast.makeText(InputActivity.this, url + message, Toast.LENGTH_LONG).show();
+                                //tvLinkFoto.setText("http://" + url);
                                 Glide.with(InputActivity.this).load("http://" + url).into(ivimage);
+                                progressBar.dismiss();
                             }
 
                             @Override
                             public void onError(ANError anError) {
+                                progressBar.dismiss();
                                 Log.d("dea", "onError: " + anError.getErrorBody());
                                 Log.d("dea", "onError: " + anError.getLocalizedMessage());
                                 Log.d("dea", "onError: " + anError.getErrorDetail());
@@ -113,33 +113,45 @@ public class InputActivity extends AppCompatActivity implements IPickResult {
                             }
                         });
 
-//                AndroidNetworking.upload("http://192.168.6.159/apibajawa/insertimage.php")
-//                        .addMultipartFile("gambar", fileselectedImagePath)
-//                        .setPriority(Priority.MEDIUM)
-//                                                     .setOkHttpClient(((Initial) getApplication()).getOkHttpClient())
-//                        .build()
-//                        .getAsJSONObject(new JSONObjectRequestListener() {
-//                            @Override
-//                            public void onResponse(JSONObject response) {
-//                                String message = response.optString("message");
-//                                String status = response.optString("status");
-//                                String url = response.optString("url");
-//                                Log.d("TEST", "url: " + url);
-//                                Toast.makeText(InputActivity.this, url + message, Toast.LENGTH_LONG).show();
-//                                tvLinkFoto.setText("http://" + url);
-//                                Glide.with(InputActivity.this).load("http://" + url).into(ivimage);
-//                            }
-//
-//                            @Override
-//                            public void onError(ANError anError) {
-//                                Log.d("dea", "onError: " + anError.getErrorBody());
-//                                Log.d("dea", "onError: " + anError.getLocalizedMessage());
-//                                Log.d("dea", "onError: " + anError.getErrorDetail());
-//                                Log.d("dea", "onError: " + anError.getResponse());
-//                                Log.d("dea", "onError: " + anError.getErrorCode());
-//                            }
-//                        });
-//
+                AndroidNetworking.post("http://192.168.6.159/apibajawa/insertproduk.php")
+                        .addBodyParameter("kodeMakanan", kode)
+                        .addBodyParameter("namaMakanan", nama)
+                        .addBodyParameter("jenisMakanan", jenis)
+                        .addBodyParameter("hargaMakanan", harga)
+                        .setPriority(Priority.LOW)
+                        .build()
+                        .getAsJSONObject(new JSONObjectRequestListener() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                Log.d("hasil", "onResponse: ");
+                                try {
+                                    JSONObject hasil = response.getJSONObject("hasil");
+                                    String status = hasil.getString("STATUS");
+                                    String message = hasil.getString("MESSAGE");
+                                    Log.d("STATUS", "onResponse: " + status);
+                                    if (status.equals("SUCCESS")) {
+                                        Intent intent = new Intent(InputActivity.this, ViewDataActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                        progressBar.dismiss();
+                                    } else {
+                                        Toast.makeText(InputActivity.this, message.toString(), Toast.LENGTH_SHORT).show();
+                                        progressBar.dismiss();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+
+                            @Override
+                            public void onError(ANError anError) {
+                                progressBar.dismiss();
+                                Log.d("dea", "onError: " + anError.getErrorDetail());
+                                Log.d("dea", "onError: " + anError.getErrorBody());
+                                Log.d("dea", "onError: " + anError.getErrorCode());
+                            }
+                        });
             }
         });
 
