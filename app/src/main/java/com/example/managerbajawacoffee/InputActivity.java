@@ -83,7 +83,7 @@ public class InputActivity extends AppCompatActivity implements IPickResult {
                                              progressBar.setTitle("Menambahkan...");
                                              progressBar.show();
 
-                AndroidNetworking.upload("http://192.168.6.159/apibajawa/insertimage.php")
+                AndroidNetworking.upload(BaseUrl.url + "insertimage.php")
                         .addMultipartFile("gambar", fileselectedImagePath)
                         .setPriority(Priority.MEDIUM)
                         .setOkHttpClient(((Initial) getApplication()).getOkHttpClient())
@@ -113,7 +113,7 @@ public class InputActivity extends AppCompatActivity implements IPickResult {
                             }
                         });
 
-                AndroidNetworking.post("http://192.168.6.159/apibajawa/insertproduk.php")
+                AndroidNetworking.post(BaseUrl.url + "insertproduk.php")
                         .addBodyParameter("kodeMakanan", kode)
                         .addBodyParameter("namaMakanan", nama)
                         .addBodyParameter("jenisMakanan", jenis)

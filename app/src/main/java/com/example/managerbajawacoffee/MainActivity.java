@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         String user = sp.getString("logged", "missing");
 
         if(user.equals("user")){
-            Intent intent = new Intent(MainActivity.this, ViewDataActivity.class);
+            Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
             startActivity(intent);
             finish();
         }
