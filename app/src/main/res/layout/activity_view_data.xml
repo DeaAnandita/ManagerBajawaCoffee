@@ -112,12 +112,12 @@
 
     <TextView
         android:id="@+id/tvm"
-        app:layout_constraintBottom_toTopOf="@+id/btn_download"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="25dp"
         android:layout_marginLeft="10dp"
         android:text="Total Masukan ("
         android:textColor="@color/colorBlack"
@@ -125,22 +125,22 @@
 
     <TextView
         android:id="@+id/tvTanggal"
-        app:layout_constraintBottom_toTopOf="@+id/btn_download"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tvm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="25dp"
         android:text="Mingguan"
         android:textStyle="bold"/>
 
     <TextView
-        app:layout_constraintBottom_toTopOf="@+id/btn_download"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/tvTanggal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="25dp"
         android:text=") : "
         android:textColor="@color/colorBlack"
         android:textStyle="bold"/>
@@ -148,11 +148,11 @@
     <TextView
         android:id="@+id/strip"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_download"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="25dp"
         android:text=" ,-"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
@@ -160,39 +160,26 @@
 
     <TextView
         android:id="@+id/tvNominal"
-        app:layout_constraintBottom_toTopOf="@+id/btn_download"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/strip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="25dp"
         android:text="180.000"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"/>
 
     <TextView
-        app:layout_constraintBottom_toTopOf="@+id/btn_download"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/tvNominal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="25dp"
         android:text="Rp. "
         android:textColor="@color/colorBlack"
         android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/btn_download"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/btn_download"
-        android:layout_marginHorizontal="20dp"
-        android:gravity="center"
-        android:hint="DOWNLOAD"
-        android:textColorHint="@color/colorWhite"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
