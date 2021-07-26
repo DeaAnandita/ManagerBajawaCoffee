@@ -7,22 +7,22 @@
     android:layout_height="match_parent"
     tools:context=".ViewDataActivity">
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/spPilih"
-        style="@style/MyDarkToolbarStyle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="150dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:spinnerMode="dropdown"
-        android:background="@drawable/bg_spinner"/>
+<!--    <androidx.appcompat.widget.AppCompatSpinner-->
+<!--        android:id="@+id/spPilih"-->
+<!--        style="@style/MyDarkToolbarStyle"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="35dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:spinnerMode="dropdown"-->
+<!--        android:background="@drawable/bg_spinner"/>-->
 
     <TextView
         android:id="@+id/tvn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spPilih"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -32,35 +32,47 @@
         android:textColor="@color/colorBlack"/>
     <TextView
         android:id="@+id/tva"
-        app:layout_constraintTop_toBottomOf="@+id/spPilih"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/tvn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="3dp"
+        android:layout_marginLeft="15dp"
         android:text="Atas Nama"
         android:textStyle="bold"
         android:textColor="@color/colorBlack"/>
     <TextView
         android:id="@+id/tvp"
-        app:layout_constraintTop_toBottomOf="@+id/spPilih"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/tva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="100dp"
         android:text="Tanggal Pembelian"
         android:textStyle="bold"
         android:textColor="@color/colorBlack"/>
+
     <TextView
         android:id="@+id/tvt"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spPilih"
+        app:layout_constraintLeft_toRightOf="@+id/tvp"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="120dp"
         android:text="Total"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tvs"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="50dp"
+        android:text="Status Order"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"/>
     <View
@@ -93,18 +105,19 @@
 
     <View
         android:id="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/lnre"
+        app:layout_constraintBottom_toTopOf="@+id/tvm"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.5dp"
         android:background="@color/colorBlack"/>
 
     <TextView
         android:id="@+id/tvm"
-        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_download"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:text="Total Masukan ("
         android:textColor="@color/colorBlack"
@@ -112,20 +125,22 @@
 
     <TextView
         android:id="@+id/tvTanggal"
-        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_download"
         app:layout_constraintLeft_toRightOf="@id/tvm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:text="Mingguan"
         android:textStyle="bold"/>
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_download"
         app:layout_constraintLeft_toRightOf="@+id/tvTanggal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:text=") : "
         android:textColor="@color/colorBlack"
         android:textStyle="bold"/>
@@ -133,10 +148,11 @@
     <TextView
         android:id="@+id/strip"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_download"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:text=" ,-"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
@@ -144,32 +160,39 @@
 
     <TextView
         android:id="@+id/tvNominal"
-        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_download"
         app:layout_constraintRight_toLeftOf="@+id/strip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:text="180.000"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"/>
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_download"
         app:layout_constraintRight_toLeftOf="@+id/tvNominal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:text="Rp. "
         android:textColor="@color/colorBlack"
         android:textStyle="bold"/>
 
     <Button
-        app:layout_constraintTop_toBottomOf="@id/tvm"
+        android:id="@+id/btn_download"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/btn_download"
         android:layout_marginHorizontal="20dp"
+        android:gravity="center"
         android:hint="DOWNLOAD"
         android:textColorHint="@color/colorWhite"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
