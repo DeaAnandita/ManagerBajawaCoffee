@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ManagerBajawaCoffee</string>
+    <string name="file_provider" translatable="false">com.example.managerbajawacoffee.fileprovider</string>
+    <string name="pick_single">Please select your image</string>
 </resources>
